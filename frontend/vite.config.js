@@ -2,11 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const repositoryName = 'leparc-pwa'
-const base = process.env.GITHUB_ACTIONS ? `/${repositoryName}/` : '/'
-
 export default defineConfig({
-  base,
   plugins: [
     vue(),
     VitePWA({
@@ -18,7 +14,7 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         lang: 'es-AR',
-        start_url: base,
+        start_url: '/',
         icons: []
       }
     })
